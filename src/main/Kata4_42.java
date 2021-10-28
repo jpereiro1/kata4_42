@@ -11,27 +11,36 @@ import view.MailHistogramBuilder;
 import view.MailListReader;
 
 public class Kata4_42 {
-
+    
+    Histogram<String> histogram;
+    ArrayList<Mail> mailList;
+    
     public static void main(String[] args) throws FileNotFoundException {
+        
+        new Kata4_42().execute();
+        
+    }
+    
+    private void execute() throws FileNotFoundException{
+        input();
+        process();
+        output();
+    }
 
-
+    private void input() throws FileNotFoundException {
         String fileName = "C:\\Users\\Entrar\\Desktop\\Kata4_42\\Kata4_42\\email.txt";
-        
         ArrayList<Mail> mailList = MailListReader.read(fileName);
+    }
 
-        
-        
+    private void process() {
         Histogram<String> histogram = MailHistogramBuilder.build(mailList);
-        
-        
+    }
+
+    private void output() {
         HistogramDisplay histoDisplay = new HistogramDisplay(histogram);
-        
-        
-        
-        
-                
-        
         histoDisplay.execute();
     }
+    
+    
     
 }
