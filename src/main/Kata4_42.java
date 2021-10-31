@@ -28,12 +28,12 @@ public class Kata4_42 {
     }
 
     private void input() throws FileNotFoundException {
-        String fileName = "C:\\Users\\Entrar\\Desktop\\Kata4_42\\Kata4_42\\email.txt";
-        ArrayList<Mail> mailList = MailListReader.read(fileName);
+        String fileName = "email.txt";
+        mailList = MailListReader.read(fileName);
     }
 
     private void process() {
-        Histogram<String> histogram = MailHistogramBuilder.build(mailList);
+        histogram = MailHistogramBuilder.build(mailList);
     }
 
     private void output() {
